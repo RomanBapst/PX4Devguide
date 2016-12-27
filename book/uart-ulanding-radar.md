@@ -24,7 +24,7 @@ ulanding_radar start /dev/serial_port
 In the upper command you will have to replace the last argument with the serial port you have connected the hardware to.
 If you don't specify any port the driver will use /dev/ttyS2 which is the TELEM2 port on Pixhawk.
 
-<aside class="notice">
+**Warning**
+
 If you are connecting the radar device to TELEM2 then make sure to set the parameter SYS_COMPANION to 0. Otherwise the serial port
 will be used by a another application and you will get unexpected behaviour.
-</aside>
