@@ -1,19 +1,18 @@
 
 # uLanding Radar
 
-The uLanding radar is a product from [Aerotenna](http://aerotenna.com/sensors/) and can be used to measure a distance to an object.
+The uLanding radar is a product from [Aerotenna](http://aerotenna.com/sensors/) and can be used to measure distance to an object.
 
 
 ## Enable the driver for your hardware
 Currently, this radar device is supported by any hardware which runs the OS NuttX and which can offer a serial port for the
 interface. Since flash space is small on some hardware you may have to enable building the driver for your target yourself.
-To do so add the following line to the cmake config file which correspond to the target you want to build for:
+To do so add the following line to the cmake config file which corresponds to the target you want to build for:
 ```
 drivers/ulanding
 ```
 
-So let's say you want to use the radar on a  Pixhawk, then you would add the upper line to the file
-[nuttx_px4fmu-v2_default.cmake](https://github.com/PX4/Firmware/blob/master/cmake/configs/nuttx_px4fmu-v2_default.cmake)
+All config files are located [here.](https://github.com/PX4/Firmware/blob/master/cmake/configs/nuttx_px4fmu-v2_default.cmake)
 
 ## Start the driver
 You will have to tell the sytem to start the driver for the radar during sytem startup.
@@ -27,7 +26,5 @@ If you don't specify any port the driver will use /dev/ttyS2 which is the TELEM2
 
 <aside class="notice">
 If you are connecting the radar device to TELEM2 then make sure to set the parameter SYS_COMPANION to 0. Otherwise the serial port
-will be used by a another application which is bad.
+will be used by a another application and you will get unexpected behaviour.
 </aside>
-
-
